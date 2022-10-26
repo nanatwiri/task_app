@@ -23,7 +23,7 @@ window.addEventListener('load', ()=> {
         //make the task_content_el a child of the task_el(div)
 
         const task_input_el = document.createElement('input');//create container and assign class for it
-        task_input_el.classList.add('test');
+        task_input_el.classList.add('text');
         task_input_el.type = 'text';
          //assign the task to the input field created above
         task_input_el.value = task;
@@ -67,8 +67,23 @@ window.addEventListener('load', ()=> {
             task_input_el.setAttribute("readonly", "readonly");
 
         }
+    }
+          function NoblankTask(uadd)
+        { 
+         var task =/^[0-9a-zA-Z]+$/;
+         if(uadd.value.match(task))
+        {
+         return true;
         }
+         else
+        {
+        alert('Please enter some task!');
+        uadd.focus();
+        return false;
+        }
+    }   
      );
+
 
 });
 });
